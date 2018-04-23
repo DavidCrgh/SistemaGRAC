@@ -5,4 +5,7 @@ package com.tec.grac.modelo;
  * Fecha: 23-Apr-18 Tiempo: 1:05 PM
  */
 public class Cajero extends Usuario {
+    public Cajero(int idUsuario, String nombre, String apellidos, String username, String contrasenna) {
+        super(idUsuario, nombre, apellidos, username, contrasenna);
+    }
 }

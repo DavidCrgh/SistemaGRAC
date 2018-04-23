@@ -1,5 +1,8 @@
 package com.tec.grac;
 
+import com.tec.grac.controladores.Controller;
+import com.tec.grac.controladores.ControllerLogin;
+import com.tec.grac.modelo.GestorDatos;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,9 +13,14 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("vistas/sample.fxml"));
+        FXMLLoader loader=  new FXMLLoader(getClass().getResource("vistas/login_view.fxml"));
+        Parent root = loader.load();
+        ControllerLogin controllerLogin= loader.getController();
+        controllerLogin.gestorDatos= new GestorDatos();
+
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 600, 500));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 

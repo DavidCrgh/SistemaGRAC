@@ -6,4 +6,8 @@ package com.tec.grac.modelo;
  */
 public class Administrador extends Usuario {
     private boolean primario;
+
+    public Administrador(int idUsuario, String nombre, String apellidos, String username, String contrasenna) {
+        super(idUsuario, nombre, apellidos, username, contrasenna);
+    }
 }
