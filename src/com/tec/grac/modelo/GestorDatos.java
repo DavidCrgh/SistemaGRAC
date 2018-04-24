@@ -84,6 +84,19 @@ public class GestorDatos {
         return null;
     }
 
+
+    public boolean existeCliente(int cliente){
+        for (Cliente c:clientes) {
+            if (c.getIdCliente()==cliente)
+                return true;
+        }
+        return false;
+    }
+
+
+
+
+
     public boolean exiteVehiculo(String placa){
         for (Vehiculo v: vehiculos) {
             if (v.getPlaca().equals(placa))
@@ -100,9 +113,29 @@ public class GestorDatos {
         return vehiculos;
     }
 
+
     public void setVehiculo(Vehiculo vehiculo){
         vehiculos.add(vehiculo);
     }
 
 
+    public void setCliente(Cliente cliente) {
+        this.clientes.add(cliente);
+    }
+
+
+
+    public void eliminarCliente(Cliente cliente) {
+        clientes.remove(cliente);
+    }
+
+    public void editarCliente(Cliente clienteSeleccionado) {
+        for (Cliente c: clientes) {
+            if (c.getIdCliente()==clienteSeleccionado.getIdCliente()){
+                clientes.remove(c);
+            }
+
+        }
+        clientes.add(clienteSeleccionado);
+    }
 }

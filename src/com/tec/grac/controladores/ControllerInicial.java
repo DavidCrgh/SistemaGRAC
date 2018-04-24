@@ -2,6 +2,7 @@ package com.tec.grac.controladores;
 
 import com.tec.grac.modelo.GestorDatos;
 
+import com.tec.grac.modelo.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
@@ -19,14 +20,16 @@ import java.io.IOException;
 public class ControllerInicial {
 
     public GestorDatos gestorDatos;
+    public Usuario usuario;
 
     @FXML
     public void clientes_btn_OnClick(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../vistas/CRUD_view.fxml"));
         Parent root = fxmlLoader.load();
-        ControllerCRUD controllerCRUD=  new ControllerCRUD();
+        ControllerCRUD controllerCRUD=  fxmlLoader.getController();
         controllerCRUD.gestorDatos=gestorDatos;
-        fxmlLoader.setController(controllerCRUD);
+        controllerCRUD.cargarTablaClientes();
+
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         Stage principal= (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -48,6 +51,27 @@ public class ControllerInicial {
         principal.hide();
         stage.show();
     }
+
+    @FXML
+    public void alquilar_btn_OnClick(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../vistas/alquilar_automovil_view.fxml"));
+        Parent root = fxmlLoader.load();
+        ControllerAlquiler controllerAlquiler=  fxmlLoader.getController();
+        controllerAlquiler.gestorDatos=gestorDatos;
+        controllerAlquiler.usuario=usuario;
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        Stage principal= (Stage) ((Node) event.getSource()).getScene().getWindow();
+        principal.hide();
+        stage.show();
+    }
+
+
+
+
+
+
 
 
 

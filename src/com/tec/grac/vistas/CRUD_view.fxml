@@ -15,12 +15,12 @@
    <children>
       <AnchorPane prefHeight="393.0" prefWidth="600.0">
          <children>
-            <TableView fx:id="table_clientes" layoutX="26.0" layoutY="176.0" prefHeight="174.0" prefWidth="553.0">
+            <TableView fx:id="tv_clientes" layoutX="26.0" layoutY="176.0" prefHeight="174.0" prefWidth="553.0">
                <columns>
-                  <TableColumn prefWidth="95.16522407531738" text="ID" />
-                  <TableColumn prefWidth="114.36516571044922" text="NOMBRE" />
-                  <TableColumn prefWidth="152.76519775390625" text="APELLIDOS" />
-                  <TableColumn minWidth="0.0" prefWidth="187.82620239257812" text="DIRECCION" />
+                  <TableColumn fx:id="tc_id" prefWidth="95.16522407531738" text="ID" />
+                  <TableColumn fx:id="tc_nombre" prefWidth="114.36516571044922" text="NOMBRE" />
+                  <TableColumn fx:id="tc_apellidos" prefWidth="152.76519775390625" text="APELLIDOS" />
+                  <TableColumn fx:id="tc_direccion" minWidth="0.0" prefWidth="187.82620239257812" text="DIRECCION" />
                </columns>
             </TableView>
             <GridPane layoutX="26.0" layoutY="35.0" prefHeight="129.0" prefWidth="286.0">
@@ -41,18 +41,19 @@
                   <Label text="Dirección:" GridPane.rowIndex="3" />
                   <TextField fx:id="tf_idCliente" GridPane.columnIndex="1" />
                   <TextField fx:id="tf_nombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField fx:id="tf_apellido" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="tf_apellidos" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextField fx:id="tf_direccion" prefWidth="127.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
             </GridPane>
-            <Button fx:id="btn_registrar" layoutX="359.0" layoutY="137.0" mnemonicParsing="false" text="Registrar" />
+            <Button fx:id="btn_registrar" layoutX="359.0" layoutY="137.0" mnemonicParsing="false" onAction="#registrar_btn_OnClick" text="Registrar" />
             <ButtonBar layoutX="312.0" layoutY="365.0">
                <buttons>
-                  <Button fx:id="btn_borrar" mnemonicParsing="false" prefHeight="27.0" prefWidth="58.0" text="Borrar" />
-                  <Button fx:id="btn_editar" mnemonicParsing="false" prefHeight="27.0" prefWidth="57.0" text="Editar" />
+                  <Button fx:id="btn_borrar" mnemonicParsing="false" onAction="#eliminar_btn_OnClick" prefHeight="27.0" prefWidth="58.0" text="Borrar" />
+                  <Button fx:id="btn_editar" mnemonicParsing="false" onAction="#editar_btn_OnClick" prefHeight="27.0" prefWidth="57.0" text="Editar" />
                   <Button fx:id="btn_salir" mnemonicParsing="false" onAction="#salir_btn_OnClick" text="Salir" />
                </buttons>
             </ButtonBar>
+            <Button fx:id="tbn_guardar" layoutX="445.0" layoutY="137.0" mnemonicParsing="false" onAction="#guardar_btn_OnClick" text="Guardar" />
          </children>
       </AnchorPane>
    </children>

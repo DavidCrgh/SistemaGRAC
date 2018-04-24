@@ -4,6 +4,7 @@ import com.tec.grac.modelo.Administrador;
 import com.tec.grac.modelo.Cajero;
 import com.tec.grac.modelo.GestorDatos;
 import com.tec.grac.modelo.Usuario;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -46,6 +47,7 @@ public class ControllerLogin{
                 root = fxmlLoader.load();
                 ControllerInicial controllerInicial = fxmlLoader.getController();
                 controllerInicial.gestorDatos = gestorDatos;
+                controllerInicial.usuario=usuario;
             } else if(usuario instanceof Cajero){
                 path_view = "../vistas/alquilar_automovil_view.fxml";
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(path_view));

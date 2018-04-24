@@ -9,10 +9,11 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ButtonBar layoutX="113.0" layoutY="76.0">
+            <ButtonBar layoutX="76.0" layoutY="169.0" prefHeight="30.0" prefWidth="448.0">
                <buttons>
                   <Button fx:id="btn_registrarVehiculo" mnemonicParsing="false" onAction="#registrarVehículo_btn_OnClick" prefHeight="30.0" prefWidth="197.0" text="Registrar Vehículo" />
                   <Button fx:id="tbn_clientes" mnemonicParsing="false" onAction="#clientes_btn_OnClick" text="Clientes" />
+                  <Button fx:id="bnt_alquilar" mnemonicParsing="false" onAction="#alquilar_btn_OnClick" text="Alquilar" />
                </buttons>
             </ButtonBar>
          </children>
