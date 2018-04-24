@@ -69,5 +69,8 @@ public class Vehiculo {
         this.alquilado = alquilado;
     }
 
-    //TODO Insertar toString()
+    @Override
+    public String toString() {
+        return "Modelo: " + modelo + "\n";
+    }
 }

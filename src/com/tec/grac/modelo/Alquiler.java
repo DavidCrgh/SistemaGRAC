@@ -67,8 +67,8 @@ public class Alquiler {
                 "fechaInicio=" + fechaInicio +
                 ", fechaFin=" + fechaFin +
                 ", cajero=" + cajero +
-                ", cliente=" + cliente +
-                ", vehiculo=" + vehiculo +
+                ", cliente=" + cliente.toString() +
+                ", vehiculo=" + vehiculo.toString() +
                 '}';
     }
 }

@@ -1,14 +1,10 @@
 package com.tec.grac.controladores;
 
-import com.tec.grac.modelo.Cliente;
-import com.tec.grac.modelo.GestorDatos;
-import com.tec.grac.modelo.Usuario;
-import com.tec.grac.modelo.Vehiculo;
+import com.tec.grac.modelo.*;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.text.Text;
 import javafx.util.Callback;
 
 import java.net.URL;
@@ -32,12 +28,6 @@ public class ControllerAlquiler implements Initializable {
 
     @FXML
     ComboBox<Vehiculo> cb_vehiculo;
-
-    @FXML
-    Text txt_detallesCliente;
-
-    @FXML
-    Text txt_detallesVehiculo;
 
     @FXML
     Button btn_crearAlquiler;
@@ -83,5 +73,16 @@ public class ControllerAlquiler implements Initializable {
         );
         Cliente cliente = cb_cliente.getValue();
         Vehiculo vehiculo = cb_vehiculo.getValue();
+
+        try {
+            Alquiler alquiler = gestorDatos.agregarAlquiler(fechaInicio, fechaFin, usuario, cliente, vehiculo);
+            System.out.println(alquiler.toString());
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Mensaje de error");
+            alert.setHeaderText("Error al crear alquiler");
+            alert.setContentText("El vehiculo seleccionado ya se encuentra alquilado.");
+            alert.showAndWait();
+        }
     }
 }
