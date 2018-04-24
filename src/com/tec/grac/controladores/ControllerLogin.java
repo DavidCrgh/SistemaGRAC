@@ -1,6 +1,7 @@
 package com.tec.grac.controladores;
 
 import com.tec.grac.modelo.Administrador;
+import com.tec.grac.modelo.Cajero;
 import com.tec.grac.modelo.GestorDatos;
 import com.tec.grac.modelo.Usuario;
 import javafx.event.ActionEvent;
@@ -32,19 +33,28 @@ public class ControllerLogin{
 
 
     public void ingresar_On_Click(Event event) throws IOException {
-        String username=tf_nombreUsuario.getText();
-        String password= pf_contrasenna.getText();
+        String username = tf_nombreUsuario.getText();
+        String password = pf_contrasenna.getText();
 
+        Usuario usuario = gestorDatos.obtenerUsuario(username, password);
 
-        if (gestorDatos.obtenerUsuario(username,password)){
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../vistas/Principal_admin_view.fxml"));
+        if (usuario != null){
+            String path_view;
+            if(usuario instanceof Administrador){
+                path_view = "../vistas/Principal_admin_view.fxml";
+            } else if(usuario instanceof Cajero){
+                path_view = "../vistas/alquilar_automovil_view.fxml";
+            } else {
+                path_view = "";
+            }
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(path_view));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
-            Stage principal= (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Stage principal = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.show();
             principal.hide();
-
 
         }else{
          Alert alert = new Alert(Alert.AlertType.ERROR);

@@ -1,6 +1,5 @@
 package com.tec.grac;
 
-import com.tec.grac.controladores.Controller;
 import com.tec.grac.controladores.ControllerLogin;
 import com.tec.grac.modelo.GestorDatos;
 import javafx.application.Application;
@@ -18,7 +17,7 @@ public class Main extends Application {
         ControllerLogin controllerLogin= loader.getController();
         controllerLogin.gestorDatos= new GestorDatos();
 
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Sistema GRAC");
         primaryStage.setScene(new Scene(root, 600, 500));
         primaryStage.setResizable(false);
         primaryStage.show();
