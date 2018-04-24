@@ -1,6 +1,7 @@
 package com.tec.grac.modelo;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Creado por David Valverde Garro - 2016034774
@@ -44,6 +45,11 @@ public class GestorDatos {
         Cliente cliente2 = new Cliente(2, "Hitomi", "Tanaka", "Tokyo, Japon");
         //</editor-fold>
 
+        //<editor-fold desc="Vehiculos">
+        Vehiculo vehiculo1 = new Vehiculo("DSS-072", "Citroen C1", 2013, "Rojo", 4);
+        Vehiculo vehiculo2 = new Vehiculo("BFF-565", "Ford Ecosport", 2014, "Gris", 5);
+        //</editor-fold>
+
         //</editor-fold>
 
         //<editor-fold desc="Poblacion de listas">
@@ -55,7 +61,19 @@ public class GestorDatos {
 
         clientes.add(cliente1);
         clientes.add(cliente2);
+
+        vehiculos.add(vehiculo1);
+        vehiculos.add(vehiculo2);
         //</editor-fold>
+    }
+
+    public void agregarAlquiler(
+            Date fechaInicio,
+            Date fechaFin,
+            Usuario cajero,
+            Cliente cliente,
+            Vehiculo vehiculo) throws Exception{
+
     }
 
     public Usuario obtenerUsuario(String username, String password) {
@@ -66,8 +84,6 @@ public class GestorDatos {
         return null;
     }
 
-
-
     public boolean exiteVehiculo(String placa){
         for (Vehiculo v: vehiculos) {
             if (v.getPlaca().equals(placa))
@@ -76,10 +92,13 @@ public class GestorDatos {
         return false;
     }
 
+    public ArrayList<Cliente> getClientes() {
+        return clientes;
+    }
+
     public ArrayList<Vehiculo> getVehiculos() {
         return vehiculos;
     }
-
 
     public void setVehiculo(Vehiculo vehiculo){
         vehiculos.add(vehiculo);

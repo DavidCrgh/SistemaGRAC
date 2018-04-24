@@ -4,7 +4,6 @@ import com.tec.grac.modelo.Administrador;
 import com.tec.grac.modelo.Cajero;
 import com.tec.grac.modelo.GestorDatos;
 import com.tec.grac.modelo.Usuario;
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,9 +32,6 @@ public class ControllerLogin{
 
 
     public void ingresar_On_Click(Event event) throws IOException {
-
-
-
         String username = tf_nombreUsuario.getText();
         String password = pf_contrasenna.getText();
         Usuario usuario = gestorDatos.obtenerUsuario(username, password);
@@ -49,15 +45,19 @@ public class ControllerLogin{
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(path_view));
                 root = fxmlLoader.load();
                 ControllerInicial controllerInicial = fxmlLoader.getController();
-                controllerInicial.gestorDatos=gestorDatos;
+                controllerInicial.gestorDatos = gestorDatos;
             } else if(usuario instanceof Cajero){
                 path_view = "../vistas/alquilar_automovil_view.fxml";
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(path_view));
                 root = fxmlLoader.load();
+                ControllerAlquiler controllerAlquiler = fxmlLoader.getController();
+                controllerAlquiler.gestorDatos = gestorDatos;
+                controllerAlquiler.usuario = usuario;
+                controllerAlquiler.poblarCombobox();
             } else {
                 path_view = "";
-                root=null;
-
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(path_view));
+                root = fxmlLoader.load();
             }
 
             Stage stage = new Stage();

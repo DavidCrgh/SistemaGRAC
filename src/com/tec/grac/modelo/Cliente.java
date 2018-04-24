@@ -53,4 +53,8 @@ public class Cliente {
     public String toString() {
         return nombre + " " + apellidos + " ; ID: " + idCliente;
     }
+
+    public String getNombreCompleto(){
+        return nombre + " " + apellidos;
+    }
 }

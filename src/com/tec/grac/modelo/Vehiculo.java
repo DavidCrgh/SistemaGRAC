@@ -10,6 +10,7 @@ public class Vehiculo {
     private int anno;
     private String color;
     private int asientos;
+    private boolean alquilado;
 
     public Vehiculo(String placa, String modelo, int anno, String color, int asientos) {
         this.placa = placa;
@@ -17,6 +18,7 @@ public class Vehiculo {
         this.anno = anno;
         this.color = color;
         this.asientos = asientos;
+        this.alquilado = false;
     }
 
     public String getPlaca() {
@@ -57,6 +59,14 @@ public class Vehiculo {
 
     public void setAsientos(int asientos) {
         this.asientos = asientos;
+    }
+
+    public boolean isAlquilado() {
+        return alquilado;
+    }
+
+    public void setAlquilado(boolean alquilado) {
+        this.alquilado = alquilado;
     }
 
     //TODO Insertar toString()
