@@ -42,9 +42,10 @@ public class ControllerLogin{
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             Stage principal= (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.show();
             principal.hide();
-            stage.showAndWait();
-            principal.show();
+
+
         }else{
          Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Mensaje de error");
