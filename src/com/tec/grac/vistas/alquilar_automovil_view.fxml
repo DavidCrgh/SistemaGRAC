@@ -33,7 +33,6 @@
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
@@ -75,30 +74,11 @@
                         <Insets left="10.0" />
                      </GridPane.margin>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
-                     <children>
-                        <Text fx:id="txt_detallesCliente" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                     </children>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </GridPane.margin>
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <children>
-                        <Text fx:id="txt_detallesVehiculo" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                     </children>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </GridPane.margin>
-                  </HBox>
                </children>
             </GridPane>
          </center>
          <bottom>
-            <Button fx:id="btn_crearAlquiler" mnemonicParsing="false" text="Crear" BorderPane.alignment="CENTER_RIGHT">
+            <Button fx:id="btn_crearAlquiler" mnemonicParsing="false" onAction="#onbtn_crearAlquilerClicked" text="Crear" BorderPane.alignment="CENTER_RIGHT">
                <BorderPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </BorderPane.margin>

@@ -55,6 +55,6 @@ public class Cliente {
     }
 
     public String getNombreCompleto(){
-        return nombre + " " + apellidos;
+        return nombre + "\n" + apellidos;
     }
 }

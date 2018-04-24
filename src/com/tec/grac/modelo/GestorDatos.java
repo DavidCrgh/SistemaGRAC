@@ -67,13 +67,21 @@ public class GestorDatos {
         //</editor-fold>
     }
 
-    public void agregarAlquiler(
+    public Alquiler agregarAlquiler(
             Date fechaInicio,
             Date fechaFin,
             Usuario cajero,
             Cliente cliente,
             Vehiculo vehiculo) throws Exception{
 
+        if(vehiculo.isAlquilado()){
+            throw new Exception();
+        } else {
+            Alquiler alquiler = new Alquiler(fechaInicio, fechaFin, cajero, cliente, vehiculo);
+            alquileres.add(alquiler);
+            vehiculo.setAlquilado(true);
+            return alquiler;
+        }
     }
 
     public Usuario obtenerUsuario(String username, String password) {
