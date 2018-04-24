@@ -10,7 +10,14 @@ public class Vehiculo {
     private int anno;
     private String color;
     private int asientos;
-    private char estado;
+
+    public Vehiculo(String placa, String modelo, int anno, String color, int asientos) {
+        this.placa = placa;
+        this.modelo = modelo;
+        this.anno = anno;
+        this.color = color;
+        this.asientos = asientos;
+    }
 
     public String getPlaca() {
         return placa;
@@ -52,11 +59,5 @@ public class Vehiculo {
         this.asientos = asientos;
     }
 
-    public char getEstado() {
-        return estado;
-    }
-
-    public void setEstado(char estado) {
-        this.estado = estado;
-    }
+    //TODO Insertar toString()
 }
