@@ -138,12 +138,14 @@ public class GestorDatos {
     }
 
     public void editarCliente(Cliente clienteSeleccionado) {
+        Cliente cliente = null;
         for (Cliente c: clientes) {
             if (c.getIdCliente()==clienteSeleccionado.getIdCliente()){
-                clientes.remove(c);
+                cliente=c;
             }
-
         }
-        clientes.add(clienteSeleccionado);
+        cliente.setNombre(clienteSeleccionado.getNombre());
+        cliente.setDireccion(clienteSeleccionado.getDireccion());
+        cliente.setApellidos(clienteSeleccionado.getApellidos());
     }
 }

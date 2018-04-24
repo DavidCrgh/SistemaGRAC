@@ -94,7 +94,7 @@ public class ControllerCRUD implements Initializable{
     @FXML
     public void guardar_btn_OnClick(ActionEvent event){
         try {
-            String nombre= tf_nombre.getText();
+            String nombre  = tf_nombre.getText();
             String apellido= tf_apellidos.getText();
             String direccion = tf_direccion.getText();
             clienteSeleccionado.setApellidos(apellido);
@@ -172,8 +172,8 @@ public class ControllerCRUD implements Initializable{
 
 
     public void cargarTablaClientes(){
-        ObservableList<Cliente> datosTablaProducto = FXCollections.observableArrayList(gestorDatos.getClientes());
-        tv_clientes.setItems(datosTablaProducto);
+        ObservableList<Cliente> datosTablaClientes = FXCollections.observableArrayList(gestorDatos.getClientes());
+        tv_clientes.setItems(datosTablaClientes);
     }
 
     public void limpiarInterface(){
