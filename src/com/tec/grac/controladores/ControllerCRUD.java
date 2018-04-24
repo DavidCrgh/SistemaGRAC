@@ -75,6 +75,7 @@ public class ControllerCRUD implements Initializable{
 
     @FXML
     public void eliminar_btn_OnClick(ActionEvent event){
+
         try {
             Cliente cliente= (Cliente) tv_clientes.getSelectionModel().getSelectedItem();
             gestorDatos.eliminarCliente(cliente);
