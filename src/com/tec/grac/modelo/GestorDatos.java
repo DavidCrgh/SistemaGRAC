@@ -65,4 +65,25 @@ public class GestorDatos {
         }
         return null;
     }
+
+
+
+    public boolean exiteVehiculo(String placa){
+        for (Vehiculo v: vehiculos) {
+            if (v.getPlaca().equals(placa))
+                return true;
+        }
+        return false;
+    }
+
+    public ArrayList<Vehiculo> getVehiculos() {
+        return vehiculos;
+    }
+
+
+    public void setVehiculo(Vehiculo vehiculo){
+        vehiculos.add(vehiculo);
+    }
+
+
 }

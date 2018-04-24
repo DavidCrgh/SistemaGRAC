@@ -33,23 +33,33 @@ public class ControllerLogin{
 
 
     public void ingresar_On_Click(Event event) throws IOException {
+
+
+
         String username = tf_nombreUsuario.getText();
         String password = pf_contrasenna.getText();
-
         Usuario usuario = gestorDatos.obtenerUsuario(username, password);
 
         if (usuario != null){
             String path_view;
+            Parent root;
+
             if(usuario instanceof Administrador){
                 path_view = "../vistas/Principal_admin_view.fxml";
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(path_view));
+                root = fxmlLoader.load();
+                ControllerInicial controllerInicial = fxmlLoader.getController();
+                controllerInicial.gestorDatos=gestorDatos;
             } else if(usuario instanceof Cajero){
                 path_view = "../vistas/alquilar_automovil_view.fxml";
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(path_view));
+                root = fxmlLoader.load();
             } else {
                 path_view = "";
+                root=null;
+
             }
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(path_view));
-            Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             Stage principal = (Stage) ((Node) event.getSource()).getScene().getWindow();
